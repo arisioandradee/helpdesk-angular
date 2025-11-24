@@ -1,0 +1,78 @@
+/* CONTAINER PRINCIPAL DO HEADER */
+.header-toolbar {
+    /* Cores: Usando uma gradiente mais suave e com profundidade (inspirado no fundo do login) */
+    background: linear-gradient(90deg, #3f51b5, #5c6bc0); /* Azul profundo e suave */
+    
+    /* Layout Funcional (mantido) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    padding: 0 1.5rem; /* Aumenta o padding para um visual mais espaçoso */
+    height: 64px;
+    font-family: 'Poppins', Roboto, sans-serif; /* Usando Poppins para coesão com o login */
+
+    /* Profundidade: Sombra mais suave e elevada */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra mais nítida e profunda */
+    z-index: 10; /* Garante que fique acima de outros elementos */
+}
+
+/* LOGO E NOME */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+/* Efeito de destaque no texto (mais limpo) */
+.logo span {
+    font-weight: 700;
+    /* Remove o text-fill-color complexo para um gradiente de cor simples */
+    color: #f0f4f8; /* Branco suave para contraste */
+    transition: color 0.3s ease;
+    letter-spacing: 0.8px;
+}
+
+.logo span:hover {
+    color: #ffffff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.6); /* Efeito neon sutil */
+}
+
+/* ÍCONE DO LOGO */
+.logo mat-icon {
+    color: #ffffff; /* Cor primária do ícone */
+    font-size: 28px;
+    transform: rotate(3deg); /* Pequeno toque de estilo */
+}
+
+/* BOTÕES DE AÇÃO (Actions) */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 5px; /* Reduz o gap para juntar um pouco mais os botões */
+}
+
+.actions button {
+    /* Estilo do botão: Fundo transparente para um visual "clean" */
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    /* Adiciona um efeito de fundo suave no hover */
+    transition: background-color 0.3s ease-in-out, transform 0.2s;
+    border-radius: 8px; /* Borda levemente arredondada (mais moderno que 50% circular) */
+    width: 44px; /* Aumenta um pouco o tamanho para facilitar o clique */
+    height: 44px;
+}
+
+.actions button:hover {
+    /* Fundo levemente visível no hover, coerente com o card */
+    background-color: rgba(255, 255, 255, 0.15); 
+    transform: translateY(-1px); /* Eleva o botão no hover */
+}
+
+.actions mat-icon {
+    font-size: 24px;
+    color: #ffffff; /* Cor do ícone */
+}

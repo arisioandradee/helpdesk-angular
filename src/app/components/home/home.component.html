@@ -1,0 +1,55 @@
+<app-header></app-header>
+<app-nav></app-nav>
+
+<div class="dashboard-container">
+  <h1>Dashboard</h1>
+
+  <!-- Cards de resumo -->
+  <div class="cards">
+    <div class="card">
+      <h2>Chamados Fechados</h2>
+      <p>{{ ticketsClosed }}</p>
+    </div>
+    <div class="card">
+      <h2>Chamados Pendentes</h2>
+      <p>{{ ticketsPending }}</p>
+    </div>
+    <div class="card">
+      <h2>Total de Clientes</h2>
+      <p>{{ newClients }}</p>
+    </div>
+  </div>
+
+  <!-- Gráfico simples de barras por técnico -->
+  <div class="chart">
+    <h2>Chamados por Técnico</h2>
+    <div class="bars">
+      <div class="bar" *ngFor="let dept of departments" [style.height.%]="dept.count * 5">
+        <span>{{ dept.name }} ({{ dept.count }})</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tabela de chamados recentes -->
+  <div class="recent-tickets">
+    <h2>Chamados Recentes</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Título</th>
+          <th>Status</th>
+          <th>Técnico</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let ticket of recentTickets">
+          <td>{{ ticket.id }}</td>
+          <td>{{ ticket.titulo }}</td>
+          <td>{{ ticket.status }}</td>
+          <td>{{ tecnicoMap[ticket.tecnico_id] || 'Sem Técnico' }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

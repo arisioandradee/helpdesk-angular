@@ -1,0 +1,124 @@
+.dashboard-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  padding-left: 140px; /* desloca do menu */
+  min-height: 100vh; /* ocupa toda a altura da tela */
+  color: #fff;
+  background-color: #1e1e2f;
+  transition: padding-left 0.3s ease;
+  animation: fadeIn 0.6s ease-out;
+}
+
+/* Animação suave ao carregar */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+}
+
+/*========== CARDS ==========*/
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background: linear-gradient(135deg, #4f46e5, #3b82f6);
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.card h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.card p {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+/*========== GRÁFICO ==========*/
+.chart {
+  margin-bottom: 2rem;
+}
+
+.bars {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-end;
+  height: 200px;
+}
+
+.bar {
+  flex: 1;
+  background-color: #3b82f6;
+  position: relative;
+  border-radius: 8px 8px 0 0;
+  transition: all 0.3s ease;
+}
+
+.bar:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+.bar span {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  color: #fff;
+  font-weight: 500;
+}
+
+/*========== TABELA DE CHAMADOS ==========*/
+.recent-tickets table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #2a2a3d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+.recent-tickets th, 
+.recent-tickets td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.recent-tickets th {
+  background-color: #3b3b5a;
+}
+
+.recent-tickets tr:nth-child(even) {
+  background-color: #27273a;
+}
+
+.recent-tickets tr:hover {
+  background-color: #3c3c5a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
