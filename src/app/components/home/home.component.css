@@ -67,10 +67,11 @@ h1 {
   gap: 1rem;
   align-items: flex-end;
   height: 200px;
+  justify-content: space-around;
 }
 
 .bar {
-  flex: 1;
+  flex: 0.5;
   background-color: #3b82f6;
   position: relative;
   border-radius: 8px 8px 0 0;
@@ -84,13 +85,16 @@ h1 {
 
 .bar span {
   position: absolute;
-  top: -1.5rem;
+  top: -1.8rem;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #fff;
-  font-weight: 500;
+  font-weight: 600;
+  white-space: nowrap;
 }
+
+
 
 /*========== TABELA DE CHAMADOS ==========*/
 .recent-tickets table {

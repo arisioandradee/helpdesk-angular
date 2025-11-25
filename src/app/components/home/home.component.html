@@ -36,7 +36,6 @@
     <table>
       <thead>
         <tr>
-          <th>ID</th>
           <th>Título</th>
           <th>Status</th>
           <th>Técnico</th>
@@ -44,10 +43,9 @@
       </thead>
       <tbody>
         <tr *ngFor="let ticket of recentTickets">
-          <td>{{ ticket.id }}</td>
           <td>{{ ticket.titulo }}</td>
           <td>{{ ticket.status }}</td>
-          <td>{{ tecnicoMap[ticket.tecnico_id] || 'Sem Técnico' }}</td>
+          <td>{{ tecnicoMap[ticket.tecnico] || 'Sem Técnico' }}</td>
         </tr>
       </tbody>
     </table>

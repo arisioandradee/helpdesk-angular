@@ -1,0 +1,130 @@
+.tecnico-list-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  padding-left: 140px;
+  min-height: 100vh;
+  color: #fff;
+  background-color: #1e1e2f;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.tecnico-list-container h2 {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* ===== Campo de pesquisa ===== */
+mat-form-field {
+  width: 350px;
+  margin-bottom: 1.5rem;
+}
+
+.mat-form-field-appearance-standard .mat-form-field-wrapper {
+  background-color: #3b3b5a;
+  border-radius: 8px;
+  padding: 0 0.5rem;
+  border: 1px solid #4f46e5;
+}
+
+.mat-form-field-label {
+  color: #d1d5db !important; /* label clara */
+  font-weight: 500;
+}
+
+.mat-input-element {
+  color: #fff !important; /* texto branco */
+  font-weight: 500;
+}
+
+/* ===== Tabela ===== */
+table.mat-elevation-z8 {
+  width: 100%;
+  background-color: #2a2a3d;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+th.mat-header-cell, td.mat-cell {
+  padding: 0.8rem 1rem;
+  color: #fff;
+}
+
+th.mat-header-cell {
+  background-color: #3b3b5a;
+  font-weight: 600;
+}
+
+tr.mat-row:nth-child(even) {
+  background-color: #27273a;
+}
+
+tr.mat-row:hover {
+  background-color: #3c3c5a;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* ===== Ícones de ação ===== */
+i.material-icons.edit {
+  color: #4f46e5;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  transition: transform 0.2s, color 0.2s;
+}
+
+i.material-icons.edit:hover {
+  color: #3b82f6;
+  transform: scale(1.2);
+}
+
+i.material-icons.delete {
+  color: #ef4444;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+i.material-icons.delete:hover {
+  color: #f87171;
+  transform: scale(1.2);
+}
+
+/* ===== Paginator como card centralizado ===== */
+.mat-paginator {
+  display: flex;
+  justify-content: center; /* centraliza horizontal */
+  margin: 2rem auto 0 auto;
+  background-color: #2a2a3d;
+  border-radius: 12px;
+  padding: 0.5rem 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  width: fit-content;
+}
+
+/* Força texto e ícones do paginator para branco */
+.mat-paginator .mat-paginator-range-label,
+.mat-paginator .mat-button,
+.mat-paginator .mat-icon,
+.mat-paginator .mat-select-value-text {
+  color: #fff !important;
+}
+
+/* Hover dos botões do paginator */
+.mat-paginator .mat-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 6px;
+}
+
+/* Input do paginator (se tiver dropdown de página) */
+.mat-paginator .mat-select-trigger {
+  color: #fff !important;
+}
+.mat-paginator .mat-select-arrow {
+  color: #fff !important;
+}
+

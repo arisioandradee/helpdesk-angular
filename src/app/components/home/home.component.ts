@@ -38,17 +38,18 @@ export class HomeComponent implements OnInit {
         // Últimos 4 chamados
         this.recentTickets = chamados
           .sort((a, b) => new Date(a.dataAbertura) < new Date(b.dataAbertura) ? 1 : -1)
-          .slice(0, 4);
+          .slice(0, 7);
 
         // Gráfico por técnico
         const grouped: any = {};
         chamados.forEach(c => {
-          const key = c.tecnicoId || 'Sem Técnico';
+          const key = c.tecnico || 'Sem Técnico'; // <- usar "tecnico" que vem do backend
           if (!grouped[key]) grouped[key] = 0;
           grouped[key]++;
         });
+
         this.departments = Object.keys(grouped).map(k => ({
-          name: this.tecnicoMap[k] || k,
+          name: this.tecnicoMap[k] || k, // aqui k será 2, 3 etc
           count: grouped[k]
         }));
       });
