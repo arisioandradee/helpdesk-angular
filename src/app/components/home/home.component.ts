@@ -29,27 +29,23 @@ export class HomeComponent implements OnInit {
       tecnicos.forEach(t => this.tecnicoMap[t.id] = t.nome);
 
       this.dashboardService.getChamados().subscribe(chamados => {
-
-        // Cards de resumo
         this.ticketsOpen = chamados.filter(c => c.status === 'ABERTO').length;
         this.ticketsClosed = chamados.filter(c => c.status === 'ENCERRADO').length;
         this.ticketsPending = chamados.filter(c => c.status === 'ANDAMENTO').length;
 
-        // Últimos 4 chamados
         this.recentTickets = chamados
           .sort((a, b) => new Date(a.dataAbertura) < new Date(b.dataAbertura) ? 1 : -1)
           .slice(0, 7);
 
-        // Gráfico por técnico
         const grouped: any = {};
         chamados.forEach(c => {
-          const key = c.tecnico || 'Sem Técnico'; // <- usar "tecnico" que vem do backend
+          const key = c.tecnico || 'Sem Técnico';
           if (!grouped[key]) grouped[key] = 0;
           grouped[key]++;
         });
 
         this.departments = Object.keys(grouped).map(k => ({
-          name: this.tecnicoMap[k] || k, // aqui k será 2, 3 etc
+          name: this.tecnicoMap[k] || k,
           count: grouped[k]
         }));
       });

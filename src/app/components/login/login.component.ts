@@ -28,7 +28,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     if (this.authService.isAuthenticated()) {
-      this.router.navigate(['/main']);
+      this.router.navigate(['/home']);
     }
   }
 
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
         if (authToken) {
           this.authService.sucessfulLogin(authToken);
           localStorage.setItem('token', authToken);
-          this.router.navigate(['/main']);
+          this.router.navigate(['/home']);
         } else {
           this.toastr.error('Não foi possível obter o token!', 'Erro');
         }

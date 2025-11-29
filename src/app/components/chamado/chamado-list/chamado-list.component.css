@@ -1,4 +1,4 @@
-.tecnico-list-container {
+.chamado-list-container {
   font-family: 'Poppins', sans-serif;
   padding: 2rem;
   padding-left: 140px;
@@ -103,6 +103,17 @@ tr.mat-row:nth-child(even) {
 tr.mat-row:hover {
   background-color: #3c3c5a;
   box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.status-badge,
+.prioridade-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 i.material-icons.edit {

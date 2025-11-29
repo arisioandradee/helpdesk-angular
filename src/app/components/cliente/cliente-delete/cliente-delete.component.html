@@ -1,27 +1,27 @@
-<div class="tecnico-delete-container">
+<div class="cliente-delete-container">
   <div class="delete-card">
-    <h2>Excluir Técnico</h2>
+    <h2>Excluir Cliente</h2>
     
     <div class="warning-message">
       <mat-icon class="warning-icon">warning</mat-icon>
-      <p>Tem certeza que deseja excluir este técnico?</p>
+      <p>Tem certeza que deseja excluir este cliente?</p>
     </div>
 
-    <div class="tecnico-info">
+    <div class="cliente-info">
       <div class="info-item">
-        <strong>ID:</strong> <span>{{ tecnico.id }}</span>
+        <strong>ID:</strong> <span>{{ cliente.id }}</span>
       </div>
       <div class="info-item">
-        <strong>Nome:</strong> <span>{{ tecnico.nome }}</span>
+        <strong>Nome:</strong> <span>{{ cliente.nome }}</span>
       </div>
       <div class="info-item">
-        <strong>CPF:</strong> <span>{{ tecnico.cpf }}</span>
+        <strong>CPF:</strong> <span>{{ cliente.cpf }}</span>
       </div>
       <div class="info-item">
-        <strong>Email:</strong> <span>{{ tecnico.email }}</span>
+        <strong>Email:</strong> <span>{{ cliente.email }}</span>
       </div>
-      <div class="info-item" *ngIf="tecnico.perfis && tecnico.perfis.length > 0">
-        <strong>Perfis:</strong> <span>{{ tecnico.perfis.join(', ') }}</span>
+      <div class="info-item" *ngIf="cliente.perfis && cliente.perfis.length > 0">
+        <strong>Perfis:</strong> <span>{{ cliente.perfis.join(', ') }}</span>
       </div>
     </div>
 
@@ -31,3 +31,4 @@
     </div>
   </div>
 </div>
+

@@ -1,15 +1,14 @@
 .dashboard-container {
   font-family: 'Poppins', sans-serif;
   padding: 2rem;
-  padding-left: 140px; /* desloca do menu */
-  min-height: 100vh; /* ocupa toda a altura da tela */
+  padding-left: 140px;
+  min-height: 100vh;
   color: #fff;
   background-color: #1e1e2f;
   transition: padding-left 0.3s ease;
   animation: fadeIn 0.6s ease-out;
 }
 
-/* Animação suave ao carregar */
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -25,7 +24,6 @@ h1 {
   margin-bottom: 1.5rem;
 }
 
-/*========== CARDS ==========*/
 .cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -57,7 +55,6 @@ h1 {
   font-weight: bold;
 }
 
-/*========== GRÁFICO ==========*/
 .chart {
   margin-bottom: 2rem;
 }
@@ -96,7 +93,6 @@ h1 {
 
 
 
-/*========== TABELA DE CHAMADOS ==========*/
 .recent-tickets table {
   width: 100%;
   border-collapse: collapse;

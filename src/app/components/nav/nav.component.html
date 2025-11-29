@@ -10,21 +10,28 @@
         </li>
 
         <li class="nav__item">
-          <a href="/tecnicos" class="nav__link">
+          <a routerLink="/tecnicos" class="nav__link" routerLinkActive="active">
             <i class='bx bx-wrench nav__icon'></i>
             <span class="nav__name">Técnicos</span>
           </a>
         </li>
 
         <li class="nav__item">
-          <a href="#" class="nav__link">
+          <a routerLink="/clientes" class="nav__link" routerLinkActive="active">
             <i class='bx bx-group nav__icon'></i>
             <span class="nav__name">Clientes</span>
           </a>
         </li>
 
         <li class="nav__item">
-          <a href="https://github.com" target="_blank" class="nav__link">
+          <a routerLink="/chamados" class="nav__link" routerLinkActive="active">
+            <i class='bx bx-support nav__icon'></i>
+            <span class="nav__name">Chamados</span>
+          </a>
+        </li>
+
+        <li class="nav__item">
+          <a href="https://github.com/arisioandradee/helpdesk-angular" target="_blank" class="nav__link">
             <i class='bx bxl-github nav__icon'></i>
             <span class="nav__name">GitHub</span>
           </a>
@@ -39,7 +46,7 @@
       </ul>
     </div>
 
-    <a href="/login" class="nav__link nav__logout">
+    <a (click)="logout()" class="nav__link nav__logout" style="cursor: pointer;">
       <i class='bx bx-log-out nav__icon'></i>
       <span class="nav__name">Logout</span>
     </a>

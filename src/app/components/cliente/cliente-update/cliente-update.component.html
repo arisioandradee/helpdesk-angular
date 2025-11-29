@@ -1,8 +1,8 @@
-<div class="tecnico-form-container">
+<div class="cliente-form-container">
   <div class="form-card">
-    <h2>Novo Técnico</h2>
+    <h2>Editar Cliente</h2>
 
-    <form [formGroup]="tecnicoForm" (ngSubmit)="create()">
+    <form [formGroup]="clienteForm" (ngSubmit)="update()">
       <mat-form-field appearance="outline">
         <mat-label>Nome</mat-label>
         <input matInput formControlName="nome" placeholder="Digite o nome">
@@ -32,11 +32,8 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Senha</mat-label>
-        <input matInput type="password" formControlName="senha" placeholder="Digite a senha">
-        <mat-error *ngIf="f.senha.touched && f.senha.invalid">
-          <span *ngIf="f.senha.errors?.required">Senha é obrigatória</span>
-          <span *ngIf="f.senha.errors?.minlength">Senha deve ter pelo menos 3 caracteres</span>
-        </mat-error>
+        <input matInput type="password" formControlName="senha" placeholder="Deixe em branco para manter a senha atual">
+        <mat-hint>Deixe em branco para manter a senha atual</mat-hint>
       </mat-form-field>
 
       <mat-form-field appearance="outline">
@@ -51,7 +48,7 @@
 
       <div class="button-group">
         <button mat-raised-button type="button" color="warn" (click)="cancel()">Cancelar</button>
-        <button mat-raised-button type="submit" color="primary">Salvar</button>
+        <button mat-raised-button type="submit" color="primary">Atualizar</button>
       </div>
     </form>
   </div>

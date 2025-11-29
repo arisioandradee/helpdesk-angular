@@ -12,8 +12,23 @@ export class TecnicoService {
 
   constructor(private http: HttpClient) { }
 
-  // d. Criar método findAll()
   findAll(): Observable<Tecnico[]> {
     return this.http.get<Tecnico[]>(this.baseUrl);
+  }
+
+  findById(id: any): Observable<Tecnico> {
+    return this.http.get<Tecnico>(`${this.baseUrl}/${id}`);
+  }
+
+  create(tecnico: Tecnico): Observable<Tecnico> {
+    return this.http.post<Tecnico>(this.baseUrl, tecnico);
+  }
+
+  update(tecnico: Tecnico): Observable<Tecnico> {
+    return this.http.put<Tecnico>(`${this.baseUrl}/${tecnico.id}`, tecnico);
+  }
+
+  delete(id: any): Observable<void> {
+    return this.http.delete<void>(`${this.baseUrl}/${id}`);
   }
 }

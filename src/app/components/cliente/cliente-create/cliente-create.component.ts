@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { TecnicoService } from '../../../services/tecnico.service';
-import { Tecnico } from '../../../models/tecnico.model';
+import { ClienteService } from '../../../services/cliente.service';
+import { Cliente } from '../../../models/cliente.model';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-tecnico-create',
-  templateUrl: './tecnico-create.component.html',
-  styleUrls: ['./tecnico-create.component.css']
+  selector: 'app-cliente-create',
+  templateUrl: './cliente-create.component.html',
+  styleUrls: ['./cliente-create.component.css']
 })
-export class TecnicoCreateComponent implements OnInit {
+export class ClienteCreateComponent implements OnInit {
 
-  tecnicoForm: FormGroup;
+  clienteForm: FormGroup;
   perfis: string[] = ['ADMIN', 'CLIENTE', 'TECNICO'];
 
   constructor(
     private fb: FormBuilder,
-    private service: TecnicoService,
+    private service: ClienteService,
     private router: Router,
     private toastr: ToastrService
   ) {
-    this.tecnicoForm = this.fb.group({
+    this.clienteForm = this.fb.group({
       nome: ['', [Validators.required, Validators.minLength(3)]],
       cpf: ['', [Validators.required, Validators.pattern(/^\d{11}$/)]],
       email: ['', [Validators.required, Validators.email]],
@@ -34,36 +34,36 @@ export class TecnicoCreateComponent implements OnInit {
   }
 
   create(): void {
-    if (this.tecnicoForm.invalid) {
-      this.tecnicoForm.markAllAsTouched();
+    if (this.clienteForm.invalid) {
+      this.clienteForm.markAllAsTouched();
       this.toastr.warning('Preencha todos os campos corretamente.', 'Atenção');
       return;
     }
 
-    const tecnico: any = {
-      nome: this.tecnicoForm.value.nome,
-      cpf: this.tecnicoForm.value.cpf.replace(/\D/g, ''),
-      email: this.tecnicoForm.value.email,
-      senha: this.tecnicoForm.value.senha,
-      perfis: this.tecnicoForm.value.perfis
+    const cliente: any = {
+      nome: this.clienteForm.value.nome,
+      cpf: this.clienteForm.value.cpf.replace(/\D/g, ''),
+      email: this.clienteForm.value.email,
+      senha: this.clienteForm.value.senha,
+      perfis: this.clienteForm.value.perfis
     };
-    this.service.create(tecnico).subscribe({
+    this.service.create(cliente).subscribe({
       next: () => {
-        this.toastr.success('Técnico criado com sucesso!', 'Sucesso');
-        this.router.navigate(['/tecnicos']);
+        this.toastr.success('Cliente criado com sucesso!', 'Sucesso');
+        this.router.navigate(['/clientes']);
       },
       error: (err) => {
         if (err.error && err.error.message) {
           this.toastr.error(err.error.message, 'Erro');
         } else {
-          this.toastr.error('Erro ao criar técnico. Tente novamente.', 'Erro');
+          this.toastr.error('Erro ao criar cliente. Tente novamente.', 'Erro');
         }
       }
     });
   }
 
   cancel(): void {
-    this.router.navigate(['/tecnicos']);
+    this.router.navigate(['/clientes']);
   }
 
   formatCpf(event: any): void {
@@ -71,10 +71,11 @@ export class TecnicoCreateComponent implements OnInit {
     if (value.length > 11) {
       value = value.substring(0, 11);
     }
-    this.tecnicoForm.patchValue({ cpf: value });
+    this.clienteForm.patchValue({ cpf: value });
   }
 
   get f() {
-    return this.tecnicoForm.controls;
+    return this.clienteForm.controls;
   }
 }
+

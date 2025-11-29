@@ -1,27 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { TecnicoService } from '../../../services/tecnico.service';
-import { Tecnico } from '../../../models/tecnico.model';
+import { ClienteService } from '../../../services/cliente.service';
+import { Cliente } from '../../../models/cliente.model';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
-  selector: 'app-tecnico-delete',
-  templateUrl: './tecnico-delete.component.html',
-  styleUrls: ['./tecnico-delete.component.css']
+  selector: 'app-cliente-delete',
+  templateUrl: './cliente-delete.component.html',
+  styleUrls: ['./cliente-delete.component.css']
 })
-export class TecnicoDeleteComponent implements OnInit {
+export class ClienteDeleteComponent implements OnInit {
 
-  tecnico: Tecnico = {
+  cliente: Cliente = {
     nome: '',
     cpf: '',
     email: '',
     perfis: []
   };
 
-  tecnicoId: number | null = null;
+  clienteId: number | null = null;
 
   constructor(
-    private service: TecnicoService,
+    private service: ClienteService,
     private router: Router,
     private route: ActivatedRoute,
     private toastr: ToastrService
@@ -30,61 +30,61 @@ export class TecnicoDeleteComponent implements OnInit {
   ngOnInit(): void {
     const idParam = this.route.snapshot.paramMap.get('id');
     if (idParam) {
-      this.tecnicoId = parseInt(idParam, 10);
-      if (isNaN(this.tecnicoId) || this.tecnicoId <= 0) {
+      this.clienteId = parseInt(idParam, 10);
+      if (isNaN(this.clienteId) || this.clienteId <= 0) {
         this.toastr.error('ID inválido.', 'Erro');
-        this.router.navigate(['/tecnicos']);
+        this.router.navigate(['/clientes']);
         return;
       }
       this.findById();
     } else {
       this.toastr.error('ID não fornecido.', 'Erro');
-      this.router.navigate(['/tecnicos']);
+      this.router.navigate(['/clientes']);
     }
   }
 
   findById(): void {
-    if (!this.tecnicoId) {
+    if (!this.clienteId) {
       this.toastr.error('ID inválido.', 'Erro');
-      this.router.navigate(['/tecnicos']);
+      this.router.navigate(['/clientes']);
       return;
     }
 
-    this.service.findById(this.tecnicoId).subscribe({
-      next: (tecnico) => {
-        this.tecnico = tecnico;
+    this.service.findById(this.clienteId).subscribe({
+      next: (cliente) => {
+        this.cliente = cliente;
       },
       error: (err) => {
-        console.error('Erro ao carregar técnico:', err);
+        console.error('Erro ao carregar cliente:', err);
         if (err.status === 404) {
-          this.toastr.error('Técnico não encontrado.', 'Erro');
+          this.toastr.error('Cliente não encontrado.', 'Erro');
         } else if (err.error && err.error.message) {
           this.toastr.error(err.error.message, 'Erro');
         } else {
-          this.toastr.error('Erro ao carregar técnico.', 'Erro');
+          this.toastr.error('Erro ao carregar cliente.', 'Erro');
         }
-        this.router.navigate(['/tecnicos']);
+        this.router.navigate(['/clientes']);
       }
     });
   }
 
   delete(): void {
-    if (!this.tecnicoId) {
+    if (!this.clienteId) {
       this.toastr.error('ID inválido.', 'Erro');
       return;
     }
 
-    this.service.delete(this.tecnicoId).subscribe({
+    this.service.delete(this.clienteId).subscribe({
       next: () => {
-        this.toastr.success('Técnico excluído com sucesso!', 'Sucesso');
-        this.router.navigate(['/tecnicos']);
+        this.toastr.success('Cliente excluído com sucesso!', 'Sucesso');
+        this.router.navigate(['/clientes']);
       },
       error: (err: any) => {
-        console.error('Erro ao excluir técnico:', err);
+        console.error('Erro ao excluir cliente:', err);
         
         if (err.status === 500) {
           this.toastr.error(
-            'Não é possível excluir este técnico pois ele está associado a um ou mais chamados em andamento. Finalize os chamados antes de excluir.',
+            'Não é possível excluir este cliente pois ele está associado a um ou mais chamados em andamento. Finalize os chamados antes de excluir.',
             'Atenção',
             { 
               timeOut: 6000,
@@ -97,17 +97,17 @@ export class TecnicoDeleteComponent implements OnInit {
         }
         
         if (err.status === 404) {
-          this.toastr.error('Técnico não encontrado.', 'Erro');
+          this.toastr.error('Cliente não encontrado.', 'Erro');
           return;
         }
         
         if (err.status === 403) {
-          this.toastr.error('Você não tem permissão para excluir este técnico.', 'Erro');
+          this.toastr.error('Você não tem permissão para excluir este cliente.', 'Erro');
           return;
         }
         
         if (err.status === 400) {
-          this.toastr.error('Não é possível excluir este técnico. Pode estar associado a chamados.', 'Erro');
+          this.toastr.error('Não é possível excluir este cliente. Pode estar associado a chamados.', 'Erro');
           return;
         }
         
@@ -126,7 +126,7 @@ export class TecnicoDeleteComponent implements OnInit {
           const lowerMessage = errorMessage.toLowerCase();
           if (lowerMessage.includes('chamado') || lowerMessage.includes('associado') || lowerMessage.includes('em andamento')) {
             this.toastr.error(
-              'Não é possível excluir este técnico pois ele está associado a um ou mais chamados em andamento. Finalize os chamados antes de excluir.',
+              'Não é possível excluir este cliente pois ele está associado a um ou mais chamados em andamento. Finalize os chamados antes de excluir.',
               'Atenção',
               { timeOut: 6000 }
             );
@@ -137,13 +137,14 @@ export class TecnicoDeleteComponent implements OnInit {
         if (errorMessage) {
           this.toastr.error(errorMessage, 'Erro');
         } else {
-          this.toastr.error('Erro ao excluir técnico. Tente novamente.', 'Erro');
+          this.toastr.error('Erro ao excluir cliente. Tente novamente.', 'Erro');
         }
       }
     });
   }
 
   cancel(): void {
-    this.router.navigate(['/tecnicos']);
+    this.router.navigate(['/clientes']);
   }
 }
+

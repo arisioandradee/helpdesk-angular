@@ -16,6 +16,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSortModule } from '@angular/material/sort';
 
 // Terceiros
 import { ToastrModule } from 'ngx-toastr';
@@ -28,13 +30,22 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './components/nav/nav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { LoginComponent } from './components/login/login.component';
-import { MainLayoutComponent } from './components/main-layout/main-layout.component';
 import { HomeComponent } from './components/home/home.component';
 import { TecnicoComponent } from './components/tecnico/tecnico.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
+import { ClienteComponent } from './components/cliente/cliente.component';
+import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
+import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
+import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
+import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
+import { ChamadoComponent } from './components/chamado/chamado.component';
+import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
+import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
+import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
+import { ChamadoDeleteComponent } from './components/chamado/chamado-delete/chamado-delete.component';
 
 // Interceptor
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -48,13 +59,22 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     NavComponent,
     HeaderComponent,
     LoginComponent,
-    MainLayoutComponent,
     HomeComponent,
     TecnicoComponent,
     TecnicoListComponent,
     TecnicoCreateComponent,
     TecnicoUpdateComponent,
-    TecnicoDeleteComponent
+    TecnicoDeleteComponent,
+    ClienteComponent,
+    ClienteListComponent,
+    ClienteCreateComponent,
+    ClienteUpdateComponent,
+    ClienteDeleteComponent,
+    ChamadoComponent,
+    ChamadoListComponent,
+    ChamadoCreateComponent,
+    ChamadoUpdateComponent,
+    ChamadoDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -74,6 +94,8 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
     MatBadgeModule,
     MatTableModule,
     MatPaginatorModule,
+    MatSelectModule,
+    MatSortModule,
     // Terceiros
     ToastrModule.forRoot({
       timeOut: 3000,

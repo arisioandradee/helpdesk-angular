@@ -1,0 +1,15 @@
+.chamado-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  padding-left: 140px;
+  min-height: 100vh;
+  color: #fff;
+  background-color: #1e1e2f;
+}
+
+.chamado-container h1 {
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
