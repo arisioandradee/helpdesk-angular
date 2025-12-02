@@ -24,7 +24,7 @@ export class ClienteService {
   /**
    * URL base da API de clientes
    */
-  private baseUrl = 'http://localhost:8080/clientes'; 
+  private baseUrl = 'https://helpdesk-project-1-iyi4.onrender.com/clientes'; 
 
   constructor(private http: HttpClient) { }
 

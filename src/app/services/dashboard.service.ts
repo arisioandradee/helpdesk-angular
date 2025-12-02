@@ -19,7 +19,7 @@ export class DashboardService {
   /**
    * URL base da API (não utilizado atualmente, cada método usa URL completa)
    */
-  private baseUrl = 'http://localhost:8080/api'; 
+  private baseUrl = 'https://helpdesk-project-1-iyi4.onrender.com/api'; 
 
   constructor(private http: HttpClient) { }
 
@@ -39,7 +39,7 @@ export class DashboardService {
    * @returns Observable com array de chamados
    */
   getChamados(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8080/chamados', { headers: this.getAuthHeaders() });
+    return this.http.get<any[]>('https://helpdesk-project-1-iyi4.onrender.com/chamados', { headers: this.getAuthHeaders() });
   }
 
   /**
@@ -47,7 +47,7 @@ export class DashboardService {
    * @returns Observable com array de clientes
    */
   getClientes(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8080/clientes', { headers: this.getAuthHeaders() });
+    return this.http.get<any[]>('https://helpdesk-project-1-iyi4.onrender.com/clientes', { headers: this.getAuthHeaders() });
   }
 
   /**
@@ -55,6 +55,6 @@ export class DashboardService {
    * @returns Observable com array de técnicos
    */
   getTecnicos(): Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:8080/tecnicos', { headers: this.getAuthHeaders() });
+    return this.http.get<any[]>('https://helpdesk-project-1-iyi4.onrender.com/tecnicos', { headers: this.getAuthHeaders() });
   }
 }

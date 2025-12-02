@@ -24,7 +24,7 @@ export class TecnicoService {
   /**
    * URL base da API de técnicos
    */
-  private baseUrl = 'http://localhost:8080/tecnicos'; 
+  private baseUrl = 'https://helpdesk-project-1-iyi4.onrender.com/tecnicos'; 
 
   constructor(private http: HttpClient) { }
 

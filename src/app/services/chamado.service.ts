@@ -24,7 +24,7 @@ export class ChamadoService {
   /**
    * URL base da API de chamados
    */
-  private baseUrl = 'http://localhost:8080/chamados'; 
+  private baseUrl = 'https://helpdesk-project-1-iyi4.onrender.com/chamados'; 
 
   constructor(private http: HttpClient) { }
 
