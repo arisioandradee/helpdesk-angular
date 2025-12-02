@@ -1,0 +1,33 @@
+<div class="tecnico-delete-container">
+  <div class="delete-card">
+    <h2>Excluir Técnico</h2>
+    
+    <div class="warning-message">
+      <mat-icon class="warning-icon">warning</mat-icon>
+      <p>Tem certeza que deseja excluir este técnico?</p>
+    </div>
+
+    <div class="tecnico-info">
+      <div class="info-item">
+        <strong>ID:</strong> <span>{{ tecnico.id }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Nome:</strong> <span>{{ tecnico.nome }}</span>
+      </div>
+      <div class="info-item">
+        <strong>CPF:</strong> <span>{{ tecnico.cpf }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Email:</strong> <span>{{ tecnico.email }}</span>
+      </div>
+      <div class="info-item" *ngIf="tecnico.perfis && tecnico.perfis.length > 0">
+        <strong>Perfis:</strong> <span>{{ tecnico.perfis.join(', ') }}</span>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button mat-raised-button type="button" color="primary" (click)="cancel()">Cancelar</button>
+      <button mat-raised-button type="button" color="warn" (click)="delete()">Excluir</button>
+    </div>
+  </div>
+</div>

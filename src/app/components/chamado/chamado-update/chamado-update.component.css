@@ -1,0 +1,114 @@
+.chamado-form-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem;
+  padding-left: 140px;
+  min-height: 100vh;
+  color: #fff;
+  background-color: #1e1e2f;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.form-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #2a2a3d;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.form-card h2 {
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Estilização dos campos do formulário */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: #4f46e5 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #3b82f6 !important;
+}
+
+::ng-deep .mat-form-field-label {
+  color: #d1d5db !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: #3b82f6 !important;
+}
+
+::ng-deep .mat-input-element {
+  color: #fff !important;
+}
+
+::ng-deep .mat-select-value-text {
+  color: #fff !important;
+}
+
+::ng-deep .mat-select-arrow {
+  color: #d1d5db !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.75em 0;
+}
+
+textarea.mat-input-element {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+button {
+  min-width: 120px;
+}
+
+::ng-deep .mat-raised-button.mat-primary {
+  background-color: #4f46e5 !important;
+  color: #fff !important;
+}
+
+::ng-deep .mat-raised-button.mat-primary:hover {
+  background-color: #3b82f6 !important;
+}
+
+::ng-deep .mat-raised-button.mat-warn {
+  background-color: #ef4444 !important;
+  color: #fff !important;
+}
+
+::ng-deep .mat-raised-button.mat-warn:hover {
+  background-color: #f87171 !important;
+}
+

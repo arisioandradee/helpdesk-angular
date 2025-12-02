@@ -1,0 +1,10 @@
+.cliente-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 2.5rem;
+  padding-top: calc(2.5rem + 64px);
+  padding-left: 160px;
+  min-height: 100vh;
+  color: #fff;
+  background: transparent;
+}
+

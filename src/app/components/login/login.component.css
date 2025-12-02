@@ -1,0 +1,321 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, input {
+  font-family: "Poppins", sans-serif;
+}
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+  overflow: hidden;
+  position: relative;
+}
+
+:host::before {
+  content: "";
+  position: absolute;
+  height: 2000px;
+  width: 2000px;
+  top: -5%;
+  right: 48%;
+  transform: translateY(-60%);
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(139, 92, 246, 0.2) 50%, transparent 100%);
+  transition: 1.8s ease-in-out;
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+:host::after {
+  content: "";
+  position: absolute;
+  height: 1500px;
+  width: 1500px;
+  bottom: -10%;
+  left: 20%;
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.25) 0%, rgba(168, 85, 247, 0.15) 50%, transparent 100%);
+  border-radius: 50%;
+  z-index: 0;
+  filter: blur(60px);
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  z-index: 1;
+}
+
+.login-card {
+  display: flex;
+  width: 900px;
+  height: 500px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+  transform: scale(0.98);
+  opacity: 0;
+  animation: fadeInScale 0.6s ease-out forwards;
+}
+
+@keyframes fadeInScale {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.login-image-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.login-image-panel::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.5; }
+  50% { transform: scale(1.1); opacity: 0.8; }
+}
+
+.login-image-panel .image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.login-form-panel {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-form-panel form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 380px;
+  padding: 0;
+}
+
+.title {
+  font-size: 2.3rem;
+  background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 8px;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.developer-info {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+
+.input-field {
+  max-width: 380px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.input-field:focus-within {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.input-field.invalid input {
+  border: 1px solid #f44336;
+}
+
+.input-field i {
+  text-align: center;
+  line-height: 55px;
+  color: #cbd5e1;
+  transition: 0.3s;
+  font-size: 1.1rem;
+}
+
+.input-field:focus-within i {
+  color: #818cf8;
+}
+
+.input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.input-field input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+}
+
+.error-message {
+  width: 100%;
+  max-width: 380px;
+  margin: 5px 0 10px 0; /* Espaçamento abaixo do input */
+  font-size: 0.85rem;
+  color: #ff4d4f; /* Vermelho suave */
+  font-weight: 500;
+  text-align: left; /* Alinha à esquerda dentro do input */
+  display: block;
+}
+
+
+.error small {
+  color: #f44336;
+  font-size: 12px;
+  margin-top: 5px;
+  display: block;
+}
+
+.btn.solid {
+  width: 150px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 49px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 10px 0;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  letter-spacing: 0.5px;
+}
+
+.btn.solid:hover {
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.5);
+}
+
+.btn.solid:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.4);
+}
+
+/* Responsividade */
+@media (max-width: 870px) {
+  .login-card {
+    flex-direction: column;
+    width: 90%;
+    height: auto;
+    min-height: 600px;
+  }
+
+  .login-image-panel {
+    height: 250px;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+  }
+
+  .login-form-panel {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  :host::before {
+    width: 1000px;
+    height: 1000px;
+    top: -50px;
+    right: -200px;
+    transform: none;
+  }
+}
+
+@media (max-width: 570px) {
+  .login-card {
+    width: 95%;
+  }
+
+  .login-image-panel {
+    height: 200px;
+  }
+
+  .login-form-panel form {
+    padding: 0 1.5rem;
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .developer-info {
+    font-size: 0.8rem;
+  }
+
+  .input-field {
+    height: 50px;
+    margin: 8px 0;
+  }
+
+  .input-field i,
+  .input-field input {
+    font-size: 1rem;
+  }
+
+  .btn.solid {
+    width: 120px;
+    height: 45px;
+    font-size: 0.9rem;
+  }
+}

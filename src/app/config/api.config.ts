@@ -1,0 +1,11 @@
+/**
+ * Configuração da API Backend
+ * 
+ * Contém a URL base do servidor backend.
+ * Todas as requisições HTTP utilizam esta URL como base.
+ * 
+ * IMPORTANTE: Altere esta URL para o endereço do seu servidor em produção.
+ */
+export const API_CONFIG = {
+  baseUrl: 'http://localhost:8080'  
+};

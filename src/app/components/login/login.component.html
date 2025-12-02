@@ -1,0 +1,43 @@
+<div class="main-container">
+  <div class="login-card">
+
+    <!-- Painel da imagem -->
+    <div class="login-image-panel">
+      <img src="assets/img/foto.png" class="image" alt="Login Illustration" />
+    </div>
+
+    <!-- Painel do formulário -->
+    <div class="login-form-panel">
+      <form [formGroup]="loginForm" (ngSubmit)="login()" class="sign-in-form">
+        <h2 class="title">Login</h2>
+        <p class="developer-info">Desenvolvido por Arisio Andrade</p>
+
+        <div class="input-field">
+          <i class="fas fa-user"></i>
+          <input type="text" placeholder="Email" formControlName="email" />
+        </div>
+        <div class="error-message" *ngIf="f.email.touched && f.email.invalid">
+          <span *ngIf="f.email.errors?.required">O email é obrigatório</span>
+          <span *ngIf="f.email.errors?.email">Formato de email inválido</span>
+        </div>
+
+        <div class="input-field">
+          <i class="fas fa-lock"></i>
+          <input type="password" placeholder="Senha" formControlName="senha" />
+        </div>
+        <div class="error-message" *ngIf="f.senha.touched && f.senha.invalid">
+          <span *ngIf="f.senha.errors?.required">A senha é obrigatória</span>
+          <span *ngIf="f.senha.errors?.minlength">
+            A senha deve ter pelo menos 3 caracteres
+          </span>
+        </div>
+
+        <button type="submit" class="btn solid">Login</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+

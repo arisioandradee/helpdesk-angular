@@ -1,0 +1,11 @@
+.tecnico-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 2.5rem;
+  padding-top: calc(2.5rem + 64px);
+  padding-left: 160px; 
+  min-height: 100vh; 
+  color: #fff;
+  background: transparent;
+  transition: padding-left 0.3s ease;
+  animation: fadeIn 0.6s ease-out;
+}

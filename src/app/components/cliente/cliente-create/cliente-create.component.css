@@ -1,0 +1,115 @@
+.cliente-form-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 2.5rem;
+  padding-left: 160px;
+  min-height: 100vh;
+  color: #fff;
+  background: transparent;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.form-card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.14), rgba(139, 92, 246, 0.16));
+  border-radius: 20px;
+  padding: 2.25rem 2.5rem;
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  backdrop-filter: blur(18px);
+}
+
+.form-card h2 {
+  margin-bottom: 1.75rem;
+  font-weight: 700;
+  font-size: 1.6rem;
+  background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+/* Estilização dos campos do formulário - tema glass */
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  color: rgba(148, 163, 184, 0.6) !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline.mat-focused .mat-form-field-outline-thick {
+  color: #818cf8 !important;
+}
+
+::ng-deep .mat-form-field-label {
+  color: #cbd5e1 !important;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  color: #a5b4fc !important;
+}
+
+::ng-deep .mat-input-element {
+  color: #e5e7eb !important;
+}
+
+::ng-deep .mat-select-value-text {
+  color: #e5e7eb !important;
+}
+
+::ng-deep .mat-select-arrow {
+  color: #cbd5e1 !important;
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+  padding: 0.75em 0;
+}
+
+.button-group {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+button {
+  min-width: 120px;
+}
+
+::ng-deep .mat-raised-button.mat-primary {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%) !important;
+  color: #fff !important;
+  box-shadow: 0 8px 22px rgba(99, 102, 241, 0.45) !important;
+  border-radius: 999px !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+::ng-deep .mat-raised-button.mat-primary:hover {
+  background: linear-gradient(135deg, #818cf8 0%, #a78bfa 100%) !important;
+  transform: translateY(-1px);
+}
+
+::ng-deep .mat-raised-button.mat-warn {
+  background: linear-gradient(135deg, #ef4444 0%, #f97373 100%) !important;
+  color: #fff !important;
+  border-radius: 999px !important;
+}
+
+::ng-deep .mat-raised-button.mat-warn:hover {
+  background: linear-gradient(135deg, #f97373 0%, #fecaca 100%) !important;
+}
+

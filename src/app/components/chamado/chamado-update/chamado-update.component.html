@@ -1,0 +1,81 @@
+<div class="chamado-form-container">
+  <div class="form-card">
+    <h2>Editar Chamado</h2>
+
+    <form [formGroup]="chamadoForm" (ngSubmit)="update()">
+      <mat-form-field appearance="outline">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="titulo" placeholder="Digite o título do chamado">
+        <mat-error *ngIf="f.titulo.touched && f.titulo.invalid">
+          <span *ngIf="f.titulo.errors?.required">Título é obrigatório</span>
+          <span *ngIf="f.titulo.errors?.minlength">Título deve ter pelo menos 3 caracteres</span>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Observações</mat-label>
+        <textarea matInput formControlName="observacoes" placeholder="Descreva o problema" rows="4"></textarea>
+        <mat-error *ngIf="f.observacoes.touched && f.observacoes.invalid">
+          <span *ngIf="f.observacoes.errors?.required">Observações são obrigatórias</span>
+          <span *ngIf="f.observacoes.errors?.minlength">Observações devem ter pelo menos 10 caracteres</span>
+        </mat-error>
+      </mat-form-field>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Prioridade</mat-label>
+          <mat-select formControlName="prioridade">
+            <mat-option *ngFor="let prioridade of prioridadeOptions" [value]="prioridade">
+              {{ prioridade }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="f.prioridade.touched && f.prioridade.invalid">
+            Prioridade é obrigatória
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status">
+            <mat-option *ngFor="let status of statusOptions" [value]="status">
+              {{ status }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="f.status.touched && f.status.invalid">
+            Status é obrigatório
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <div class="form-row">
+        <mat-form-field appearance="outline">
+          <mat-label>Cliente</mat-label>
+          <mat-select formControlName="cliente">
+            <mat-option *ngFor="let cliente of clientes" [value]="cliente.id">
+              {{ cliente.nome }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="f.cliente.touched && f.cliente.invalid">
+            Cliente é obrigatório
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Técnico</mat-label>
+          <mat-select formControlName="tecnico">
+            <mat-option [value]="null">Sem Técnico</mat-option>
+            <mat-option *ngFor="let tecnico of tecnicos" [value]="tecnico.id">
+              {{ tecnico.nome }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="button-group">
+        <button mat-raised-button type="button" color="warn" (click)="cancel()">Cancelar</button>
+        <button mat-raised-button type="submit" color="primary">Atualizar</button>
+      </div>
+    </form>
+  </div>
+</div>
+

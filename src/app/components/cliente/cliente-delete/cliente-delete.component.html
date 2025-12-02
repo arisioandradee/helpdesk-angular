@@ -1,0 +1,34 @@
+<div class="cliente-delete-container">
+  <div class="delete-card">
+    <h2>Excluir Cliente</h2>
+    
+    <div class="warning-message">
+      <mat-icon class="warning-icon">warning</mat-icon>
+      <p>Tem certeza que deseja excluir este cliente?</p>
+    </div>
+
+    <div class="cliente-info">
+      <div class="info-item">
+        <strong>ID:</strong> <span>{{ cliente.id }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Nome:</strong> <span>{{ cliente.nome }}</span>
+      </div>
+      <div class="info-item">
+        <strong>CPF:</strong> <span>{{ cliente.cpf }}</span>
+      </div>
+      <div class="info-item">
+        <strong>Email:</strong> <span>{{ cliente.email }}</span>
+      </div>
+      <div class="info-item" *ngIf="cliente.perfis && cliente.perfis.length > 0">
+        <strong>Perfis:</strong> <span>{{ cliente.perfis.join(', ') }}</span>
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button mat-raised-button type="button" color="primary" (click)="cancel()">Cancelar</button>
+      <button mat-raised-button type="button" color="warn" (click)="delete()">Excluir</button>
+    </div>
+  </div>
+</div>
+

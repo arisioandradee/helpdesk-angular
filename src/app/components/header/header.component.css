@@ -1,0 +1,75 @@
+/* CONTAINER PRINCIPAL DO HEADER */
+.header-toolbar {
+    /* Cores: Gradiente moderno e vibrante */
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a855f7 100%);
+    
+    /* Layout Funcional (mantido) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    padding: 0 2rem;
+    height: 64px;
+    font-family: 'Poppins', Roboto, sans-serif;
+
+    /* Posicionamento fixo */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    /* Profundidade: Sombra moderna e elevada */
+    box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3), 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 99998; /* abaixo apenas do painel de notificações */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+/* LOGO E NOME */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 28px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: translateX(2px);
+}
+
+/* Efeito de destaque no texto */
+.logo span {
+    font-weight: 700;
+    background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo:hover span {
+    background: linear-gradient(135deg, #ffffff 0%, #c7d2fe 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* ÍCONE DO LOGO */
+.logo mat-icon {
+    color: #ffffff;
+    font-size: 32px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.logo:hover mat-icon {
+    transform: rotate(5deg) scale(1.05);
+}
+
+/* BOTÕES DE AÇÃO REMOVIDOS (notificações) */
