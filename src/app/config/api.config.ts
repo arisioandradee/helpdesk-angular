@@ -7,5 +7,5 @@
  * IMPORTANTE: Altere esta URL para o endereço do seu servidor em produção.
  */
 export const API_CONFIG = {
-  baseUrl: 'http://localhost:8080'  
+  baseUrl: 'https://helpdesk-project-1-iyi4.onrender.com'  
 };
